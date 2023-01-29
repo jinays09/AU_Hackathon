@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HomePage</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script>
+      function validateForm() {
+    var isValid = true;
+    var email = document.forms["myForm"]["email"].value;
+    var password = document.forms["myForm"]["password"].value;
+    var passwordConfirm = document.forms["myForm"]["passwordConfirm"].value;
+
+    if (email == "" || email==null) {
+        document.getElementById("emailError").innerHTML = "Email is required";
+        isValid = false;
+    } else if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        document.getElementById("emailError").innerHTML = "Invalid email format";
+        isValid = false;
+    } else {
+        document.getElementById("emailError").innerHTML = "";
+    }
+
+    if (password == "" || password == null) {
+        document.getElementById("passwordError").innerHTML = "Password is required";
+        isValid = false;
+    } else if (password.length < 8) {
+        document.getElementById("passwordError").innerHTML = "Password must be at least 8 characters long";
+        isValid = false;
+    } else {
+        document.getElementById("passwordError").innerHTML = "";
+    }
+
+    if (passwordConfirm == "" || passwordConfirm==null) {
+        document.getElementById("passwordConfirmError").innerHTML = "Confirm password is required";
+        isValid = false;
+    } else if (password != passwordConfirm) {
+        document.getElementById("passwordConfirmError").innerHTML = "Passwords do not match";
+        isValid = false;
+    } else {
+        document.getElementById("passwordConfirmError").innerHTML = "";
+    }
+    return isValid;
+}
+
+    </script>
+  </head>
+<body>
+    <section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form class='my-4' action = 'http://127.0.0.1:5000/register' method='post' name="myForm" >
+                <input type="hidden" name="csrf_token" value="asdfdkjdf">
+        
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name = 'Uname' />
+                  <label class="form-label" for="form3Example1cg">Username</label>
+                </div>
+                <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name = 'name' />
+                    <label class="form-label" for="form3Example1cg">Name</label>
+                  </div>
+
+
+                <div class="form-outline mb-4">
+                  <label for=""> Gender : </label>&emsp;&emsp;
+                    <input type="radio" id="form3Example3cg"  name="gender" value="Male" /> 
+                    
+                    <label class="form-label" for="form3Example3cg">Male</label> 
+                    <input type="radio" id="form3Example3cg"  name="gender" value="Female"/>
+                    <label class="form-label" for="form3Example3cg">Female</label> 
+
+                  </div>
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email"/>
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                  <span id="emailError" style="color:red"></span>
+                  <br>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name = 'password' />
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Confirm your password</label>
+                  <span id="passwordConfirmError" style="color:red"></span>
+                  <br>
+                </div>
+                <div>
+                    <label for="color" class="form-label">Choose a color:</label><br>
+                    &emsp;&emsp; <input type="checkbox" name = "color" id="form3Example4cdg"  value="red"> <label for="red"> Red</label><br>
+                        &emsp;&emsp;   <input type="checkbox" name = "color" id="form3Example4cdg" value="blue"> <label for="blue"> Blue</label><br>
+                        &emsp;&emsp;   <input type="checkbox" name = "color" id="form3Example4cdg"  value="white" > <label for="white"> White</label><br>
+                  </div>
+
+                  <div>
+                    <label for="brands" class="form-label">Choose brands:</label>&emsp;&emsp;
+                    <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" name = "brands" value = "Roadster" id="form3Example4cdg"  > <label for="roadster"> Roadster</label><br>
+                    &emsp; &emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" name = "brands" value = "raymond" id="form3Example4cdg"  > <label for="raymond"> Raymond</label><br>
+                    &emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" name= "brands" value = "Allen Solly" id="form3Example4cdg" > <label for="Allen Solly">Allen Solly</label><br>
+                    &emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="checkbox" name= "brands" value = "highlander" id="form3Example4cdg" > <label for="highlander">Highlander</label><br>
+                  </div>
+                  
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit">Submit</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="\login"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

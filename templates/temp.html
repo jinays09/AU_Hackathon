@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" />
+    <link href="common.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #474e5d;
+            color: white;
+        }
+
+        .container {
+            padding: 0 16px;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        
+
+        .navbar {
+            background-color: black;
+            border-radius: 30px;
+
+        }
+
+        .navbar ul {
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 13px 20px;
+
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .navbar li a:hover {
+            color: red
+        }
+
+        .search {
+            float: right;
+            color: white;
+            padding: 12px 75px;
+        }
+
+        .navbar input {
+            border: 2px solid black;
+            border-radius: 14px;
+            padding: 3px 17px;
+            width: 129px;
+        }
+        ul{
+            display: flex;
+        }
+
+        li{
+            list-style: none;
+            margin: 1rem;
+        }
+
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo{
+            padding: 1rem;
+            font-size: xx-large;
+        }
+        
+        /* div.img_gal{
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        } */
+
+        div.gallery {
+            margin: 15px;
+            margin-left: 40px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 319px;
+            height: 400px;
+            position: relative;
+            display: grid;
+            gap: 50px 100px;
+            justify-content: space-evenly;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 200px;
+            height: 200px;
+        }
+
+        div.desc {
+            padding: 25px;
+            text-align: center;
+        }
+
+                        
+    </style>
+</head>
+
+<body>
+
+    <div class="about-section">
+        <h1>AU Hackathon</h1>
+        <p>Some text about who we are and what we do.</p>
+        <p>Resize the browser window to see that this page is responsive by the way.</p>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact us</a></li>
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <div class="img_gal">
+        <div class="gallery">
+            <a target="_blank" href="link[0]">
+                <img src={{img_links[0]}} alt="Cinque Terre">
+            </a>
+            <div class="desc">
+                <p>{{titles[0]}}</p>
+                <p>Price: {{prices[0]}}</p>
+            </div>
+        </div>
+    
+        <div class="gallery">
+            <a target="_blank" href={{link[1]}}>
+                <img src={{img_links[1]}} alt="Forest" >
+            </a>
+            <div class="desc">
+                <p>{{titles[1]}}</p>
+                <p>Price: {{prices[1]}}</p>
+            </div>
+        </div>
+    
+
+            <div class="gallery">
+                <a target="_blank" href={{link[2]}}>
+                    <img src={{img_links[2]}} alt="Northern Lights" >
+                </a>
+                <div class="desc">
+                    <p>{{titles[2]}}</p>
+                    <p>Price: {{prices[2]}}</p>
+                </div>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href={{link[3]}}>
+                    <img src={{img_links[3]}} alt="Mountains">
+                </a>
+                <div class="desc">
+                    <p>{{titles[3]}}</p>
+                <p>Price: {{prices[3]}}</p>
+            </div>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href={{link[4]}}>
+                    <img src={{img_links[4]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>{{titles[4]}}</p>
+                <p>Price: {{prices[4]}}</p>
+            </div>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href={{link[5]}}>
+                    <img src={{img_links[5]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>{{titles[5]}}</p>
+                <p>Price: {{prices[5]}}</p>
+            </div>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href={{link[6]}}>
+                    <img src={{img_links[6]}} alt="Mountains">
+                </a>
+                <div class="desc">
+                    <p>{{titles[6]}}</p>
+                <p>Price: {{prices[6]}}</p>
+            </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href={{link[7]}}>
+                    <img src={{img_links[7]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>brands[7]</p>
+                    <p>{{titles[7]}}</p>
+                <p>Price: {{prices[7]}}</p>
+            </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href={{link[8]}}>
+                    <img src={{img_links[8]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>{{brands[8]}}</p>
+                    <p>{{titles[8]}}</p>
+                <p>Price: {{prices[8]}}</p>
+            </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href={{link[9]}}>
+                    <img src={{img_links[9]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>{{brands[9]}}</p>
+                    <p>{{titles[9]}}</p>
+                <p>Price: {{prices[9]}}</p>
+            </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href={{link[10]}}>
+                    <img src={{img_links[10]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>{{brands[10]}}</p>
+                    <p>{{titles[10]}}</p>
+                <p>Price: {{prices[10]}}</p>
+            </div>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href={{link[11]}}>
+                    <img src={{img_links[11]}} alt="Mountains" >
+                </a>
+                <div class="desc">
+                    <p>{{brands[11]}}</p>
+                    <p>{{titles[11]}}</p>
+                <p>Price: {{prices[11]}}</p>
+            </div>
+            </div>
+        
+        
+    </div>
+    
+</body>
+
+</html>
